@@ -83,6 +83,19 @@ export default class LoginPage extends Component {
         return false;
     }
 
+    // There should only be one @
+    let str = email.replace('@', '');
+    if ( str.indexOf('@') > -1 ) {
+        return false;
+    }
+
+    // There should only be one .
+    str = email.replace('.', '');
+    if ( str.indexOf('.') > -1 ) {
+        return false;
+    }
+
+
     return true;
   }
 
