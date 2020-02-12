@@ -14,7 +14,7 @@ export const LoginProvider = (props) => {
         username: null, // email address 
         balance: 25,
         listItems: ListItems, // imported list of machines 
-        counterId: 4 // This is a poor way to keep track but since we're using a static JSON file, we will use it
+        counterId: 4 // This is a poor way to keep track but since we're using a static JSON file, we will use it. Ideally, this should be returned from the server or calculated on FE
     });
 
 
