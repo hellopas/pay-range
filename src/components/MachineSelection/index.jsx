@@ -13,8 +13,12 @@ import SingleWasher from 'components/SingleWasher';
 
 export default class MachineSelection extends Component {
   
+  /**
+   * Maps through all the items in the list of machines and renders 
+   * each one with the appropriate info.
+   */
   renderMachines() {
-    const { userInfo, removeMachine } = this.context;
+    const { userInfo, removeMachine } = this.context; // Accessing the Login context
 
     return (
       <>
@@ -27,8 +31,8 @@ export default class MachineSelection extends Component {
   }
 
   render() {
-    const { userInfo, addMachine, addBalance } = this.context;
-    let balance = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(userInfo.balance);
+    const { userInfo, addMachine, addBalance } = this.context; // Accessing the Login context
+    let balance = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(userInfo.balance); // Converts balance into $XX.XX format
 
     return (
       <>

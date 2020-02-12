@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 /* Import styles */
 import './LoginPage.scss';
 
-
 /* Import my components */
 import Header from 'components/Header';
 import RectButton from 'components/RectButton';
@@ -21,11 +20,10 @@ export default class LoginPage extends Component {
     passError: false,
   };
 
-
-  componentDidMount() {
-
-  }
-
+  /**
+   * Shows error if email is are not properly formatted or password is missing.
+   * If email and pass is good, attempts to log in user.
+   */
   tryLoginUser = () => {
     let emailValid = this.isEmailValid(this.state.email);
     let passwordValid = this.isPasswordValid(this.state.password);
@@ -49,10 +47,13 @@ export default class LoginPage extends Component {
           this.loginUser();
         });
     }
-
-    
   }
 
+  /**
+   * Runs through checks to make sure email address valid.
+   *
+   * @param {String} email
+   */
   isEmailValid = (email) => {
     let indexOfAt = email.indexOf('@');
     let indexOfDot = email.indexOf('.');
@@ -61,18 +62,23 @@ export default class LoginPage extends Component {
         return false;
     }
 
+    // @ has to occur after the first character.
+    // . has to occur after the third character.
     if( indexOfAt < 1 || indexOfDot < 3 ) {
         return false;
     }
 
+    // @ has to occur before .
     if ( indexOfAt > indexOfDot ) {
         return false;
     }
 
+    // . can't come right after @
     if ( email.charAt(indexOfAt + 1) === '.' ) {
         return false;
     }
 
+    // . can't be the last character 
     if ( email.charAt(indexOfDot + 1) === '' ) {
         return false;
     }
@@ -80,6 +86,11 @@ export default class LoginPage extends Component {
     return true;
   }
 
+  /**
+   * Checks if password has been entered.
+   *
+   * @param {String} password
+   */
   isPasswordValid = (password) => {
     if ( password === '' ) {
         return false;
@@ -88,18 +99,30 @@ export default class LoginPage extends Component {
     return true;
   }
 
+  /**
+   * Uses the Login context to log user in. Using async to wait here
+   * because we are mocking the process with a setTimeout in the Login context.
+   */
   loginUser = async () => {
     const { loginUser } = this.context;
     await loginUser(this.state.email);
   }
 
+  /**
+   * Event listener for the password input field. Fires the tryLoginUser
+   * function when Enter is hit after typing in password.
+   *
+   * @param {Obj} evt
+   */
   keyPressed = (evt) => {
     if (evt.key === "Enter") {
         this.tryLoginUser();
     }
   }
 
-
+  /**
+   * Renders login page. This is what the user sees when logged out.
+   */
   render() {
 
     const { email, password, loading, emailError, passError } = this.state;

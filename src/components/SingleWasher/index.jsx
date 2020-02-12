@@ -1,9 +1,18 @@
 /* Import 3rd party libraries */
-import React, { Component } from 'react';
+import React from 'react';
 
 /* Import styles and media */
 import './SingleWasher.scss';
 
+/**
+ * Renders a single washer machine element on the logged in page.
+ *
+ * @param {Func} cb - Callback when remove button is clicked.
+ * @param {Int} index - Index of the single element in the array
+ * @param {Int} id - Id of the single element in the array
+ * @param {String} label - Label of the single element
+ * @param {String} status - Busy or available for the single element 
+ */
 const SingleWasher = ({ cb, index, id, label, status }) => {
 
 	return( 

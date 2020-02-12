@@ -1,30 +1,17 @@
 /* Import 3rd party libraries */
 import React, { Component } from 'react';
-
-/* Import styles */
-
-
-/* Import my components */
-
+import { Redirect } from "react-router";
 
 export default class PageNotFound extends Component {
+
+  // This currently redirects to homepage. But we can change it in the future 
+  // to show a better page not found.
   
-  state = {
-
-  };
-
-
-  componentDidMount() {
-
-  }
-
-
   render() {
 
     return (
       <div className='pagenotfound'>
-        Page not found
-
+        <Redirect to='/' />
       </div>
 
     );
