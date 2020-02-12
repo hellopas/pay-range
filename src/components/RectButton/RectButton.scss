@@ -1,0 +1,33 @@
+@import '../../config/variables';
+
+.rectbutton {
+	background-color: $theme-color;
+    padding: 15px 15px 15px 15px;
+    text-align: center;
+    display: inline-block;
+    color: white;
+    font-size: 24px;
+    min-width: 230px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.rectbutton:hover {
+	filter: brightness(1.1);
+}
+
+.rectbutton:active {
+	filter: brightness(0.9);
+}
+
+.rectbutton__loading {
+	background-color: #7ad8fb;
+    padding: 15px 15px 15px 15px;
+    text-align: center;
+    display: inline-block;
+    color: white;
+    font-size: 24px;
+    min-width: 230px;
+    border-radius: 10px;
+    cursor: not-allowed;
+}

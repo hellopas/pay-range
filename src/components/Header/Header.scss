@@ -1,0 +1,63 @@
+@import '../../config/variables';
+
+.header {
+	background-color: $theme-color;
+	height: 60px;
+	color: white;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+}
+
+
+.header-logout {
+	background-color: $theme-color;
+	height: 60px;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__button {
+		margin-right: auto;
+		img {
+			width: 27px;
+		    cursor: pointer;
+		    filter: invert(1);
+		    position: relative;
+		    top: 2px;
+		    left: 14px;
+		}
+
+		img:hover {
+			opacity: 0.8;
+		}
+
+		img:active {
+			opacity: 0.7;
+		}
+	}
+
+	&__title {
+	    font-size: 22px;
+	}
+
+	&__add {
+		bottom: 4px;
+	    margin-left: auto;
+	    width: 27px;
+	    font-size: 35px;
+	    position: relative;
+	    right: 6px;
+	    cursor: pointer;
+	}
+
+	&__add:hover {
+		opacity: 0.8;
+	}
+
+	&__add:active {
+		opacity: 0.7;
+	}
+}

@@ -1,0 +1,68 @@
+.singlewasher {
+	width: 100%;
+	display: flex;
+	background: white;
+	border: 2px solid #d3d3d3;
+	border-radius: 5px;
+	padding: 10px 15px 10px 10px;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+
+	&__id {
+		display: flex;
+		font-size: 29px;
+		border: 2px solid #d7d7d7;
+		background: #fafafa;
+		border-radius: 5px;
+		height: 58px;
+		width: 58px;
+		justify-content: center;
+		align-items: center;
+		margin-right: 15px;
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		&-label {
+			font-size: 28px;
+			padding-bottom: 5px;
+			color: #595959;
+		}
+
+		&-available {
+			font-size: 18px;
+			color: #9c9c9c;
+		}
+	}
+
+	&__button {
+		display: flex;
+	    justify-content: center;
+	    height: 58px;
+	    width: 58px;
+	    border-radius: 50%;
+	    background: red;
+	    color: white;
+	    font-size: 64px;
+	    font-weight: 200;
+	    align-items: center;
+	    margin-left: auto;
+	    cursor: pointer;
+	    div {
+	    	line-height: 0;
+		    position: relative;
+		    bottom: 5px;
+	    }
+
+	}
+
+	&__button:hover {
+	    	opacity: 0.8;
+	}
+
+	&__button:active {
+	     	opacity: 0.7;
+	}
+
+}
