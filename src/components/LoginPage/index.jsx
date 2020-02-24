@@ -55,48 +55,8 @@ export default class LoginPage extends Component {
    * @param {String} email
    */
   isEmailValid = (email) => {
-    let indexOfAt = email.indexOf('@');
-    let indexOfDot = email.indexOf('.');
-
-    if ( email === '') {
-        return false;
-    }
-
-    // @ has to occur after the first character.
-    // . has to occur after the third character.
-    if( indexOfAt < 1 || indexOfDot < 3 ) {
-        return false;
-    }
-
-    // @ has to occur before .
-    if ( indexOfAt > indexOfDot ) {
-        return false;
-    }
-
-    // . can't come right after @
-    if ( email.charAt(indexOfAt + 1) === '.' ) {
-        return false;
-    }
-
-    // . can't be the last character 
-    if ( email.charAt(indexOfDot + 1) === '' ) {
-        return false;
-    }
-
-    // There should only be one @
-    let str = email.replace('@', '');
-    if ( str.indexOf('@') > -1 ) {
-        return false;
-    }
-
-    // There should only be one .
-    str = email.replace('.', '');
-    if ( str.indexOf('.') > -1 ) {
-        return false;
-    }
-
-
-    return true;
+    let emailPattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+    return emailPattern.test(email);
   }
 
   /**
